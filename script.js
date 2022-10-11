@@ -37,6 +37,72 @@ document.getElementById('producto4').addEventListener("dblclick", function () {
     a = a + 1
 })
 
+document.getElementById('componente1').addEventListener("dblclick", function () {
+    document.getElementById('componente1').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente2').addEventListener("dblclick", function () {
+    document.getElementById('componente2').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente3').addEventListener("dblclick", function () {
+    document.getElementById('componente3').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente4').addEventListener("dblclick", function () {
+    document.getElementById('componente4').style.zIndex = a.toString()
+    a = a + 1
+})
+
+document.getElementById('componente5').addEventListener("dblclick", function () {
+    document.getElementById('componente5').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente6').addEventListener("dblclick", function () {
+    document.getElementById('componente6').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente7').addEventListener("dblclick", function () {
+    document.getElementById('componente7').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente8').addEventListener("dblclick", function () {
+    document.getElementById('componente8').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente9').addEventListener("dblclick", function () {
+    document.getElementById('componente9').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente10').addEventListener("dblclick", function () {
+    document.getElementById('componente10').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente11').addEventListener("dblclick", function () {
+    document.getElementById('componente11').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente12').addEventListener("dblclick", function () {
+    document.getElementById('componente12').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente13').addEventListener("dblclick", function () {
+    document.getElementById('componente13').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente14').addEventListener("dblclick", function () {
+    document.getElementById('componente14').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente15').addEventListener("dblclick", function () {
+    document.getElementById('componente15').style.zIndex = a.toString()
+    a = a + 1
+})
+document.getElementById('componente16').addEventListener("dblclick", function () {
+    document.getElementById('componente16').style.zIndex = a.toString()
+    a = a + 1
+})
+
 function arrastrarElemento(element) {
     //establecer 4 posiciones para posicionar en la pantalla
     let pos1 = 0,
