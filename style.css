@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-    color: #3a241d;
+    color: red;
     text-align: center;
 }
 
@@ -13,6 +13,7 @@ h1 {
     height: 100%;
     padding: 10px;
     left: 0px;
+    background-color: aqua;
 }
 
 #tablero-derecho {
@@ -21,6 +22,7 @@ h1 {
     height: 100%;
     padding: 10px;
     right: 0px;
+    background-color: blue;
 }
 
 .contenedor {
@@ -55,7 +57,7 @@ h1 {
 .layout {
     height: 80%;
     width: 45%;
-    border: 2px solid #3a241d;
+    border: 4px solid red;
     border-radius: 1rem;
     position: absolute;
     opacity: 0.5;
@@ -84,4 +86,5 @@ h1 {
     position: relative;
     display: inline;
     top: 0.5rem;
+    color: red;
 }
