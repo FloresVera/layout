@@ -13,7 +13,7 @@ h1 {
     height: 100%;
     padding: 10px;
     left: 0px;
-    background-color: aqua;
+    background-color: aliceblue;
 }
 
 #tablero-derecho {
@@ -22,7 +22,7 @@ h1 {
     height: 100%;
     padding: 10px;
     right: 0px;
-    background-color: blue;
+    background-color: aquamarine;
 }
 
 .contenedor {
@@ -42,15 +42,15 @@ h1 {
 
 .componente {
     position: absolute;
-    max-width: 100%;
-    max-height: 150%;
+    max-width: 250px;
+    max-height: 250px;
     z-index: 3;
 }
 
 .producto {
     position: absolute;
-    max-width: 200%;
-    max-height: 200%;
+    max-width: 300px;
+    max-height: 300px;
     z-index: 2;
 }
 

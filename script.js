@@ -1,134 +1,48 @@
-arrastrarElemento(document.getElementById('componente1'));
-arrastrarElemento(document.getElementById('componente2'));
-arrastrarElemento(document.getElementById('componente3'));
-arrastrarElemento(document.getElementById('componente4'));
-arrastrarElemento(document.getElementById('componente5'));
-arrastrarElemento(document.getElementById('componente6'));
-arrastrarElemento(document.getElementById('componente7'));
-arrastrarElemento(document.getElementById('componente8'));
-arrastrarElemento(document.getElementById('componente9'));
-arrastrarElemento(document.getElementById('componente10'));
-arrastrarElemento(document.getElementById('componente11'));
-arrastrarElemento(document.getElementById('componente12'));
-arrastrarElemento(document.getElementById('componente13'));
-arrastrarElemento(document.getElementById('componente14'));
-arrastrarElemento(document.getElementById('componente15'));
-arrastrarElemento(document.getElementById('componente16'));
-arrastrarElemento(document.getElementById('producto1'));
-arrastrarElemento(document.getElementById('producto2'));
-arrastrarElemento(document.getElementById('producto3'));
-arrastrarElemento(document.getElementById('producto4'));
+//Crear una lista para obtener todos los elementos de tipo img de la página
+var imagenes = document.getElementsByTagName("img");
+//Iniciar for para recorrer cada imagen
+for (var i = 0; i < imagenes.length; i++) {
+    // Guardar la imagen en una constante
+    const imagen = imagenes[i];
 
-var a = 4
-document.getElementById('producto1').addEventListener("dblclick", function () {
-    document.getElementById('producto1').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('producto2').addEventListener("dblclick", function () {
-    document.getElementById('producto2').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('producto3').addEventListener("dblclick", function () {
-    document.getElementById('producto3').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('producto4').addEventListener("dblclick", function () {
-    document.getElementById('producto4').style.zIndex = a.toString()
-    a = a + 1
-})
+    imagen.onmousedown = function (event) {
+        // (1) preparar para mover: hacerlo absoluto y ponerlo sobre todo con el z-index
+        imagen.style.position = 'absolute';
+        imagen.style.zIndex = 10;
+        imagen.style.borderRadius = '50%'
+        imagen.style.boxShadow = '0px 0px 15px 15px #e2ebf0'
 
-document.getElementById('componente1').addEventListener("dblclick", function () {
-    document.getElementById('componente1').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente2').addEventListener("dblclick", function () {
-    document.getElementById('componente2').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente3').addEventListener("dblclick", function () {
-    document.getElementById('componente3').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente4').addEventListener("dblclick", function () {
-    document.getElementById('componente4').style.zIndex = a.toString()
-    a = a + 1
-})
+        // quitar cualquier padre actual y moverlo directamente a body
+        // para posicionarlo relativo al body
+        document.body.append(imagen);
 
-document.getElementById('componente5').addEventListener("dblclick", function () {
-    document.getElementById('componente5').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente6').addEventListener("dblclick", function () {
-    document.getElementById('componente6').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente7').addEventListener("dblclick", function () {
-    document.getElementById('componente7').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente8').addEventListener("dblclick", function () {
-    document.getElementById('componente8').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente9').addEventListener("dblclick", function () {
-    document.getElementById('componente9').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente10').addEventListener("dblclick", function () {
-    document.getElementById('componente10').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente11').addEventListener("dblclick", function () {
-    document.getElementById('componente11').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente12').addEventListener("dblclick", function () {
-    document.getElementById('componente12').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente13').addEventListener("dblclick", function () {
-    document.getElementById('componente13').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente14').addEventListener("dblclick", function () {
-    document.getElementById('componente14').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente15').addEventListener("dblclick", function () {
-    document.getElementById('componente15').style.zIndex = a.toString()
-    a = a + 1
-})
-document.getElementById('componente16').addEventListener("dblclick", function () {
-    document.getElementById('componente16').style.zIndex = a.toString()
-    a = a + 1
-})
+        // centrar la imagen en las coordenadas (pageX, pageY)
+        function moveAt(pageX, pageY) {
+            imagen.style.left = pageX - imagen.offsetWidth / 2 + 'px';
+            imagen.style.top = pageY - imagen.offsetHeight / 2 + 'px';
+        }
 
-function arrastrarElemento(element) {
-    //establecer 4 posiciones para posicionar en la pantalla
-    let pos1 = 0,
-        pos2 = 0,
-        pos3 = 0,
-        pos4 = 0;
-    element.onpointerdown = arrastrarPuntero;
-    function arrastrarPuntero(e) {
-        e.preventDefault();
-        console.log(e);
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onpointermove = iniciarArrastreElemento;
-        document.onpointerup = pararArrastreElemento;
-    }
-    function iniciarArrastreElemento(e) {
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        console.log(pos1, pos2, pos3, pos4);
-        element.style.top = element.offsetTop - pos2 + 'px';
-        element.style.left = element.offsetLeft - pos1 + 'px';
-    }
-    function pararArrastreElemento() {
-        document.onpointerup = null;
-        document.onpointermove = null;
-    }
+        // mover nuestra imagen posicionada absolutamente bajo el puntero
+        moveAt(event.pageX, event.pageY);
+
+        function onMouseMove(event) {
+            moveAt(event.pageX, event.pageY);
+        }
+
+        // (2) mover la imagen con mousemove
+        document.addEventListener('mousemove', onMouseMove);
+
+        // (3) soltar la imagen, quitar cualquier manejador de eventos innecesario
+        imagen.onmouseup = function () {
+            document.removeEventListener('mousemove', onMouseMove);
+            imagen.onmouseup = null;
+            imagen.style.borderRadius = '0%'
+            imagen.style.boxShadow = 'none'
+        };
+
+        imagen.ondragstart = function () {
+            return false;
+        };
+
+    };
 }
